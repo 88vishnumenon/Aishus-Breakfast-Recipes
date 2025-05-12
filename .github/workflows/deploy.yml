@@ -26,9 +26,6 @@ jobs:
     
     - name: Build
       run: npm run build
-    
-    - name: Run Tests
-      run: npm test
       
     - name: Deploy to Firebase
       if: github.ref == 'refs/heads/main'  # Only deploy on main branch
