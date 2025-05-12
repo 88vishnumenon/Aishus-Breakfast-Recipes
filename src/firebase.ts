@@ -2,20 +2,25 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
+import { getAnalytics } from 'firebase/analytics';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCPVAOl1kox_HTjRvR7PN3HzviAMiDOOc8",
+    apiKey: "AIzaSyDxXxXxXxXxXxXxXxXxXxXxXxXxXxXxXx",
     authDomain: "aishu-breakfast-recipes.firebaseapp.com",
     projectId: "aishu-breakfast-recipes",
-    storageBucket: "aishu-breakfast-recipes.firebasestorage.app",
-    messagingSenderId: "502310395559",
-    appId: "1:502310395559:web:d240411e9db2c63d484582"
+    storageBucket: "aishu-breakfast-recipes.appspot.com",
+    messagingSenderId: "123456789012",
+    appId: "1:123456789012:web:1234567890123456789012",
+    measurementId: "G-XXXXXXXXXX"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-export const storage = getStorage(app);
 
-export default app; 
+// Initialize Storage with custom settings
+const storage = getStorage(app);
+
+export { app, analytics, storage }; 
